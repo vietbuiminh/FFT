@@ -12,3 +12,10 @@ Here is the animation for that
 
 ![animation](figures/fft2d_animation.gif)
 >I used an input image that converted to gray scale. That is(was) me on my 6th day of recovery after face planted on a side walk.
+
+## Finally
+We finally got there when sorting the magnitude of the FFT and plot it 
+
+![animation2](figures/fft2d_reconstruction.gif)
+
+You can see the attempt in mag_fft2d.jl

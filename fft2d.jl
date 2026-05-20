@@ -34,6 +34,9 @@ y = (0:Ny-1) .* dy
 F = fftshift(fft(signal))
 spectrum = abs.(F)
 
+fx = fftshift(fftfreq(Nx, fsx))
+fy = fftshift(fftfreq(Ny, fsy))
+
 function inverse_2Dfft(F)
     F_reconstructed = ifftshift(F)
     signal_reconstructed = ifft(F_reconstructed)
@@ -54,10 +57,6 @@ filtered_spectrum = abs.(filtered_F)
 
 real_reconstructed = inverse_2Dfft(F)
 filtered_reconstructed = inverse_2Dfft(filtered_F)
-
-fx = fftshift(fftfreq(Nx, fsx))
-fy = fftshift(fftfreq(Ny, fsy))
-
 
 fig = Figure(size = (1600, 800))
 ax1 = GLMakie.Axis(fig[1, 1], yreversed = true,title = "Input Signal (2D)", xlabel = "y", ylabel = "x")
